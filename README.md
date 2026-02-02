@@ -3,8 +3,8 @@
 ## Getting ssdd-docker
 
 ```
-git clone https://github.com/acaldero/uc3m_sd.git
-cd uc3m_sd
+git clone https://github.com/acaldero/ssdd-docker.git
+cd ssdd-docker
 ./docker.sh build
 ```
 
@@ -20,7 +20,7 @@ cd uc3m_sd
   <td>
 </html>
 
-  * First time + "each time u20-dockerfile is updated":
+  * First time + "each time u20-dockerfile is updated" (it takes a while):
     * ./docker.sh build
 
   * To start **3** containers:
@@ -55,7 +55,7 @@ cd uc3m_sd
   * To work with some container:
     * To get into container **1** out of 2 please execute:
       *  ./docker.sh bash **1**
-    * <some work inside container **1** at /work directory>
+    * <some work inside container **1** at /home/lab/work/ directory>
     * To exit from container **1** please use:
       *  exit
 
@@ -71,7 +71,7 @@ cd uc3m_sd
 
 
 **Please beware of**:
-  * Any modification outside /shared will be discarded on container stopping.
+  * Any modification outside ```/home/lab/work/``` directory (and ```/shared/``` directory) will be discarded on container stopping.
   * Please make a backup of your work "frequently".
   * You might need to use "sudo" before ./docker.sh if your user doesn't belong to the docker group (could be solved by using "sudo usermod -aG docker ${USER}")
 
