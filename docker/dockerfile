@@ -32,6 +32,7 @@ RUN apt-get update && apt-get install -y --allow-change-held-packages \
         \
         ubuntu-restricted-extras \
         imagemagick \
+        psmisc bash-completion \
         && \
     apt-get clean
 
@@ -103,8 +104,9 @@ USER lab
  RUN sudo chown -R lab:lab /home/lab
 
 
-# E) Laboratories: MPI
+# E) Laboratories
 
+## MPI
 USER lab
 RUN /home/lab/bin/install-openmpi.sh  /home/lab
 
